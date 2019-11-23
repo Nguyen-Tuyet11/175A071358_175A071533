@@ -1,0 +1,20 @@
+body{
+    background-color:#FFEDCA ;
+}
+.header{
+    text-align: center;
+    color:#CC6600;
+}
+.main{
+    display: flex;
+}
+.image{
+    width: 35%;
+}
+.table{
+    width: 65%;
+}
+.image img{
+    width: 450px;
+    height: 200px;
+}

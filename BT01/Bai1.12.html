@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tạo form và các điều khiển </title>
+</head>
+<body>
+    <form style="color:forestgreen">
+        <h2 align="center"  >Phiếu đăng ký tham gia chương trình khuyến mãi</h2>
+        <table align="center" border="1" cellpadding="0" cellspacing="0" width="35%" style=" background-color:greenyellow" ><tr>
+            <td>Họ và tên</td>
+            <td><input type="text" name="HoTen" size="30%"></td>
+        </tr>
+        <tr>
+            <td>Địa chỉ</td>
+            <td><input type="text" name="DiaChi" size="25%"></td>
+        </tr>
+        <tr>
+            <td>Điện thoại</td>
+            <td><input type="text" name="sdt" size="20%"></td>
+        </tr>
+        <tr>
+            <td>Phái</td>
+            <td><input type="radio" name="gt" value="Nam">Nam
+                <input type="radio" name="gt" value="Nữ">Nữ</td>
+        </tr>
+        <tr>
+            <td>Nghề nghiệp</td>
+            <td><select>
+                    <option value="Bác sĩ">Bác sĩ</option>
+                    <option value="Kỹ sư">Kỹ sư</option>
+                    <option value="Giáo viên">Giáo viên</option>
+                    <option value="Khác">Khác</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Chọn sản phẩm tham gia</td>
+            <td><select size="4" multiple>
+                    <option value="Kem đánh răng">Kem đánh răng</option>
+                    <option value="Bôt giặt">Bôt giặt</option>
+                    <option value="Dầu gội đầu">Dầu gội đầu</option>
+                    <option value="Sữa tắm">Sữa tắm</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>Số người dụ đoán tham gia</td>
+            <td><input type="text" size="10"></td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2">
+                    <button  type="button" onclick="vb()">Đồng ý</button>
+            </td>
+            
+        </tr>
+        <tr>
+            <td colspan="2">
+            </td>
+        </tr></table>
+    </form>
+</body>
+</html>

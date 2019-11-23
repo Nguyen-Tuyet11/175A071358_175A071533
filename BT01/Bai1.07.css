@@ -1,0 +1,24 @@
+.header{
+    text-align: center;color:crimson;
+}
+
+.main{
+    display:flex
+}
+.menu{
+    width: 30%;
+}
+.list{
+    width: 70%;
+}
+.menu img{
+    width: 250px;
+    height: auto;
+}
+.list ol font{
+    background-color: crimson;
+}
+.main p{
+    width: auto;
+    background-color: darksalmon ;
+}
