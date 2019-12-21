@@ -1,0 +1,88 @@
+
+.logo{
+    padding-top: 20px;
+    padding-left: 100px;
+}
+
+.menu{
+    width:1000px;
+    margin:0px auto;
+    background-color:#00008B;
+    height: 50px;
+    margin-top: 20px;
+}
+.clearfix{
+    display: flex;
+}
+.menu li {
+    margin:0px;
+    list-style:none;
+   
+}
+.menu a {
+    
+    color:#fff;
+    text-decoration:none;
+}
+.menu li:hover > a {
+    text-decoration:none;
+    color:#fff;
+} 
+
+/*----- css cho phần menu cha -----*/
+.menu > ul > li {
+    float:left;
+    display:inline;
+    position:relative;
+    font-size:14px;
+}
+.menu > ul > li > a {
+    padding:0 15px;
+    display:block;
+    color:white;
+    text-transform: uppercase;
+    line-height: 44px;
+}
+.menu > ul > li:hover > a, .menu > ul > .current-item > a {
+    background:rgb(2,139,255);
+}
+/*----css cho menu con----*/
+.menu li:hover .sub-menu {
+    z-index:1;
+    opacity:1;
+}
+.sub-menu {
+    width:160%;
+    padding:5px 0px;
+    position:absolute;
+    top:100%;
+    left:0px;
+    z-index:-1;
+    opacity:0;
+    transition:opacity linear 0.15s;
+    box-shadow:0px 2px 3px rgb(2,139,255);
+    background:rgb(2,139,255);
+}
+.sub-menu li {
+   
+    font-size:16px;
+}
+
+.sub-menu li a:hover, .sub-menu .current-item a {
+    background:rgb(2,139,255)e3436;
+}
+.footer .footer-middle {
+    background-color: #001373;
+    padding: 25px 0;
+}
+div {
+    display: block;
+}
+.footer-middle .address {
+    color: #fff;
+    font-size: 13px;
+    line-height: 18px;
+    font-family: 'RobotoCondensedRegular', sans-serif;
+    margin: 0;
+}
+
