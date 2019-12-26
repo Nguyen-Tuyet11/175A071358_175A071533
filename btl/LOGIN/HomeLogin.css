@@ -1,0 +1,110 @@
+form {
+    border: 3px solid #f1f1f1;
+    width: 350px;
+    /* Dùng margin :auto để căn nó vào giữa */
+    margin: auto;
+}
+
+.header {
+    background-color: white;
+}
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #cccccc;
+    /* box-sizing: boder-box dùng để chỉ đường viền của nó cạnh nhua
+    Ngoài ra để tránh phần tử con tràn ra  khỏi phần tử cha(form)
+    ; */
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+#btlogin {
+    background-color: #1a29a0;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    /* Kiểu con trỏ chuột pointer là hình bàn tay khi hover */
+    cursor: pointer;
+    width: 100%;
+}
+
+.cancel {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+    border: none;
+    color: #ffffff;
+    border-radius: 15%;
+}
+
+span a:hover {
+    color: #f44336;
+}
+
+.container {
+    padding: 15px;
+}
+
+span.forgotps {
+    float: right;
+    padding-top: 20px;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+
+img.logo {
+    width: 40%;
+}
+
+li a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:hover {
+    color: #1a29a0;
+}
+
+ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-bar {
+    text-align: right;
+    margin: 20px 0;
+    background-color: #56a4fe;
+    padding: 3px 10px;
+}
+
+
+/* Dùng thẻ body để k để cách 2 biên một khoảng cách nào hết */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-with:300px) {
+    span.forgotps {
+        display: block;
+        float: none;
+    }
+    .cancel {
+        width: 100%;
+    }
+}
+
+.nav-bar {
+    margin-top: 0px;
+}
