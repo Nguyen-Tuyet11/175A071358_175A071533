@@ -1,0 +1,212 @@
+body {
+    background-color: #F3F5F8;
+    font-family: sans-serif;
+    font-size: 15px;
+    color: #676a6d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.col-md-2 {
+    position: fixed;
+    margin: 94px;
+}
+
+.navbar-fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.col-md-10 {
+    position: static;
+    margin: 90px 10px 10px 230px;
+}
+
+.navbar-default {
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+    /* box-shadow:  dùng để tạo bóng xung quang cho hộp; */
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+div {
+    display: block;
+}
+
+.navbar-default .logo {
+    float: left;
+    padding: 30px 39px;
+}
+
+
+/* .container-fluid{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+   
+} */
+
+.navbar-btn {
+    float: left;
+    padding: 16px 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.navbar-form {
+    padding: 15px;
+    border: 0;
+    float: left;
+}
+
+.input-group {
+    position: relative;
+}
+
+.navbar-nav>li>a {
+    padding: 28px 20px;
+}
+
+.dropdown-menu.show {
+    margin: 30px 0px;
+}
+
+.slidebar {
+    position: fixed;
+    width: 260px;
+    height: 100%;
+    left: 0px;
+    overflow: scroll;
+    background-color: #2B333E;
+}
+
+.slidebar a {
+    color: #AEB7C2;
+    margin-top: 0px;
+    padding: 25px 30px;
+}
+
+.slidebar a:last-of-type {
+    margin-top: 10px;
+}
+
+.slidebar a:hover {
+    color: #ffffff;
+}
+
+a {
+    list-style: none;
+    text-decoration: none;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #252c35;
+}
+
+.panel {
+    background-color: #ffffff;
+    height: 200px;
+    margin: 30px 30px 10px 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.09);
+    position: static;
+    padding: 20px 20px 20px;
+}
+
+.calendar {
+    margin: 30px 20px 10px 50px;
+}
+
+
+/* Phần nội dung panel */
+
+.panel-heading {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.metric {
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    border: 1px solid #DCE6EB;
+    height: 100px;
+}
+
+.metric .icon {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    float: left;
+    background-color: #0081c2;
+    text-align: center;
+    padding-top: 12.5px;
+}
+
+.metric .icon i {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.metric p {
+    text-align: right;
+}
+
+
+/* Dung display block để tạo khối */
+
+.metric .number {
+    font-size: 28px;
+    display: block;
+}
+
+.dropdown {
+    list-style: none;
+}
+
+a:active,
+a:hover,
+a:link {
+    text-decoration: none;
+}
+
+
+/* Phần sinh viên 
+Cho hộp form về giữa  thì dùng margin :auto
+*/
+
+.row .fmcenter {
+    display: flex;
+    margin-right: auto;
+}
+
+table {
+    margin: auto;
+    margin-top: 50px;
+    position: relative;
+}
+
+.panelSV {
+    background-color: #ffffff;
+    height: auto;
+    margin: 30px 30px 10px 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.09);
+    position: static;
+    padding: 20px 20px 20px;
+}
+
+@media screen and(max-width: 1366px) {
+    .calendar {
+        position: relative;
+    }
+}
+
+.fa .fa-tachometer i {
+    margin-right: 10px;
+    font-size: 18px;
+}

@@ -1,0 +1,393 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto 0px;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login>a {
+    color: black;
+    padding: 4px;
+    border: 4px solid #ccc;
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+.logo {
+    width: 45%;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.menu {
+    width: 100%;
+    background-color: #00008B;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fas-fa-home {
+    width: 100px;
+    height: auto;
+}
+
+.clearfix {
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu li {
+    margin: 0px;
+    list-style: none;
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu li:hover>a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/*----- css cho phần menu cha -----*/
+
+.menu>ul>li {
+    float: left;
+    display: inline;
+    position: relative;
+    font-size: 14px;
+}
+
+.home a {
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+}
+
+.menu>ul>li>a {
+    padding: 0 15px;
+    display: block;
+    color: white;
+    text-transform: uppercase;
+    line-height: 44px;
+}
+
+.menu>ul>li:hover>a,
+.menu>ul>.current-item>a {
+    background: rgb(2, 139, 255);
+}
+
+
+/*----css cho menu con----*/
+
+.menu li:hover .sub-menu {
+    z-index: 1;
+    opacity: 1;
+}
+
+.sub-menu {
+    width: 200%;
+    padding: 5px 0px;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity linear 0.15s;
+    box-shadow: 0px 2px 3px rgb(2, 139, 255);
+    background: rgb(2, 139, 255);
+}
+
+.sub-menu li {
+    font-size: 16px;
+    border-bottom: 1px solid #ccc
+}
+
+.sub-menu li a:hover,
+.sub-menu .current-item a {
+    background: rgb(2, 139, 255)e3436;
+}
+
+
+/* main */
+
+.main {
+    background-color: #fff;
+    height: auto;
+    width: auto;
+}
+
+.tlu-menu {
+    padding-left: 20px;
+}
+
+.tlu-menu ul {
+    background: #fff;
+    width: 250px;
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+    border-bottom: 1px solid #e8e8e8
+}
+
+.tlu-menu li {
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0 1em;
+}
+
+.tlu-menu li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    display: block;
+}
+
+.tlu-menu li:hover {
+    background: #CDE2CD;
+}
+
+.tlu-menu ul li {
+    position: relative;
+}
+
+.tlu-menu.sub-menu1 {
+    position: absolute;
+    left: 250px;
+    top: 0;
+}
+
+.tlu-menu .sub-menu1 {
+    position: absolute;
+    left: 250px;
+    top: 0;
+    display: none;
+}
+
+.tlu-menu li:hover .sub-menu1 {
+    display: block;
+}
+
+
+/* main */
+
+.main {
+    width: 100%;
+    padding: 1em 0em;
+}
+
+.item {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.img {
+    width: 30%;
+}
+
+.img img {
+    width: 284px;
+}
+
+.a:hover {
+    color: rgb(0, 119, 255);
+}
+
+
+}
+
+/* footer */
+.footer {
+    width: 100%;
+}
+.footer-top {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    background-color: rgb(2, 139, 255);
+    color: #fff;
+    font-size: 24px;
+    align-items: center;
+    justify-content: space-between;
+}
+.socials {
+    padding-right: 60px;
+    display: flex;
+}
+h3 {
+    padding-left: 60px;
+}
+.title h3:hover {
+    text-decoration: none;
+}
+.socials a {
+    display: block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgb(2, 139, 255);
+    color: #fff;
+    display: flex;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.footer-middle {
+    display: flex;
+    background-color: #001373;
+    color: #fff;
+    height: 290px;
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+.container {
+    display: flex;
+    padding-right: 40px;
+}
+.row {
+    /* border-bottom: 1px solid silver; */
+}
+.address>a {
+    color: #fff;
+}
+.address {
+    width: 435px;
+    height: 72px;
+    padding-right: 10px;
+}
+.map {
+    padding-left: 40px;
+}
+.res_menu {
+    display: none;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+@media screen and (max-width: 800px) {
+    .logo {
+        width: 60%;
+    }
+    
+    .logo img {
+        width: 100%;
+    }
+    
+    .login {
+        width: 30%;
+    }
+    
+    .res_menu {
+        display: inline-block;
+        width: 100%;
+    }
+    
+    .menu {
+        display: none;
+    }
+    
+    .res_menu ul {
+        width: 40%;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 2em 1em;
+        margin-top: 0px;
+        position: absolute;
+        z-index: 100;
+    }
+    
+    .res_menu ul li {
+        margin: 1em 0;
+        color: honeydew;
+        border-bottom: 1px solid silver;
+    }
+    
+    .res_menu ul li a {
+        color: honeydew;
+    }
+    
+    #icon {
+        padding: 0.5em;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .footer-top {
+        display: inline-block;
+        font-size: 75%;
+    }
+    
+    .socials a {
+        font-size: 90%;
+        width: 50%;
+        height: 50%;
+    }
+    
+    .footer-middle {
+        width: 100%;
+        display: inline-block;
+        float: left;
+        height: 100%;
+    }
+    
+    .footer-middle img {
+        width: 100%;
+    }
+    
+    .map {
+        padding-left: 0px;
+    }
+    
+    .container {
+        width: 100%;
+        display: inline-block;
+        padding-right: 0px;
+    }
+    
+    .row {
+        width: 95%;
+        display: inline-block;
+        height: auto;
+        border-bottom: 1px solid silver;
+        padding: 1em 0em 1em 1em;
+    }
+    
+    .address {
+        width: 100%;
+        padding: 0px;
+    }
+    
+    .item {
+        display: inline-block;
+    }
+    
+    .img {
+        width: 100%;
+    }
+}
