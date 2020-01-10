@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 30, 2019 lúc 03:12 PM
+-- Thời gian đã tạo: Th1 10, 2020 lúc 09:32 AM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.3.10
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `test`
+-- Cơ sở dữ liệu: `id12088928_qldsv`
 --
 
 -- --------------------------------------------------------
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `chuyennganh` (
   `ID` varchar(10) NOT NULL,
-  `Ten` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `TenCN` varchar(50) CHARACTER SET utf8 NOT NULL,
   `KhoaID` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -38,7 +38,7 @@ CREATE TABLE `chuyennganh` (
 -- Đang đổ dữ liệu cho bảng `chuyennganh`
 --
 
-INSERT INTO `chuyennganh` (`ID`, `Ten`, `KhoaID`) VALUES
+INSERT INTO `chuyennganh` (`ID`, `TenCN`, `KhoaID`) VALUES
 ('1', 'Công nghệ thông tin', '1'),
 ('10', 'Điện công nghiệp và dân dụng ', '5'),
 ('11', 'Năng lượng mới và tái tạo', '5'),
@@ -64,6 +64,16 @@ CREATE TABLE `ctdiemsv` (
   `Diem` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Đang đổ dữ liệu cho bảng `ctdiemsv`
+--
+
+INSERT INTO `ctdiemsv` (`LoaiDiemID`, `SinhVienID`, `LopTC_ID`, `Diem`) VALUES
+('1', '1', 4, 8),
+('2', '1', 4, 10),
+('3', '1', 2, 7),
+('4', '1', 2, 8);
+
 -- --------------------------------------------------------
 
 --
@@ -74,6 +84,18 @@ CREATE TABLE `ctphantramdiemloptc` (
   `LoaiDiemID` varchar(10) NOT NULL,
   `LopTC_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Đang đổ dữ liệu cho bảng `ctphantramdiemloptc`
+--
+
+INSERT INTO `ctphantramdiemloptc` (`LoaiDiemID`, `LopTC_ID`) VALUES
+('1', 4),
+('2', 4),
+('3', 2),
+('4', 2),
+('5', 1),
+('6', 1);
 
 -- --------------------------------------------------------
 
@@ -97,8 +119,10 @@ CREATE TABLE `giangvien` (
 --
 
 INSERT INTO `giangvien` (`ID`, `HoTen`, `KhoaID`, `HocVi`, `HocHam`, `ChuyenMon`, `email`, `gioitinh`) VALUES
-('1', 'Trần Kim', '1', 'Thạc sĩ', 'Phó giáo sư', 'Phân Tích', 'kim@wru.vn', 'nữ'),
-('2', 'Nguyễn MI', '1', 'Thạc sĩ', 'Thạc sĩ', 'CNTT', 'miwwru.com', 'nữ');
+('1', 'Trần Kim', '1', 'Thạc sĩ', 'Phó giáo sư', 'HTTT', 'kim@wru.vn', 'nữ'),
+('2', 'Nguyễn MI', '1', 'Thạc sĩ', 'Thạc sĩ', 'CNTT', 'miwwru.com', 'nữ'),
+('3', 'Phùng Thế Việt', '1', 'Thạc sĩ', 'Phó giáo sư', 'CNTT', 'viet@gmail.com', 'Nam'),
+('4', 'Tiếng Văn Anh', '1', 'Thạc sĩ', 'Thạc sĩ', 'CNTT', 'anh@gmail.com', 'Nam');
 
 -- --------------------------------------------------------
 
@@ -124,6 +148,19 @@ CREATE TABLE `khanangdayhoc` (
   `MonHocID` varchar(10) NOT NULL,
   `GiangVienID` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Đang đổ dữ liệu cho bảng `khanangdayhoc`
+--
+
+INSERT INTO `khanangdayhoc` (`MonHocID`, `GiangVienID`) VALUES
+('CSE280', '2'),
+('CSE371', '1'),
+('CSE381', '1'),
+('CSE486', '1'),
+('ENGL112', '3'),
+('ENGL112', '4'),
+('PHYS121', '2');
 
 -- --------------------------------------------------------
 
@@ -161,6 +198,18 @@ CREATE TABLE `loaidiem` (
   `PhanTram` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Đang đổ dữ liệu cho bảng `loaidiem`
+--
+
+INSERT INTO `loaidiem` (`ID`, `Ten`, `PhanTram`) VALUES
+('1', 'QuaTrinh', 30),
+('2', 'Thi', 70),
+('3', 'QuaTrinh', 40),
+('4', 'Thi', 60),
+('5', 'QuaTrinh', 50),
+('6', 'QuaTrinh', 50);
+
 -- --------------------------------------------------------
 
 --
@@ -170,17 +219,42 @@ CREATE TABLE `loaidiem` (
 CREATE TABLE `lop` (
   `ID` varchar(10) NOT NULL,
   `TenLop` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `KhoaID` varchar(10) NOT NULL
+  `ChuyenNganhID` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Đang đổ dữ liệu cho bảng `lop`
 --
 
-INSERT INTO `lop` (`ID`, `TenLop`, `KhoaID`) VALUES
+INSERT INTO `lop` (`ID`, `TenLop`, `ChuyenNganhID`) VALUES
+('1', '59TH1', ''),
+('2', '59TH2', ''),
+('3', '59TH3', ''),
+('4', '59CT1', '');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `lop1`
+--
+
+CREATE TABLE `lop1` (
+  `ID` varchar(10) NOT NULL,
+  `TenLop` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `ChuyenNganhID` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Đang đổ dữ liệu cho bảng `lop1`
+--
+
+INSERT INTO `lop1` (`ID`, `TenLop`, `ChuyenNganhID`) VALUES
 ('1', '59TH1', '1'),
 ('2', '59TH2', '1'),
-('3', '59TH3', '1');
+('3', '59TH3', '1'),
+('4', 'HT', '2'),
+('5', 'PM1', '3'),
+('6', 'PM2', '3');
 
 -- --------------------------------------------------------
 
@@ -192,14 +266,23 @@ CREATE TABLE `loptinchi` (
   `ID` int(11) NOT NULL,
   `GiangVienID` varchar(10) NOT NULL,
   `MonHocID` varchar(10) NOT NULL,
-  `Nhom` int(11) NOT NULL,
-  `NienKhoa` int(11) DEFAULT year(curdate()),
+  `NienKhoa` int(11) DEFAULT 2019,
   `HocKy` int(11) DEFAULT 1,
   `SoSVToiTieu` int(11) DEFAULT 10,
   `SoSVToiDa` int(11) DEFAULT 70,
   `NgayBatDau` date DEFAULT curdate(),
   `NgayKetThuc` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Đang đổ dữ liệu cho bảng `loptinchi`
+--
+
+INSERT INTO `loptinchi` (`ID`, `GiangVienID`, `MonHocID`, `NienKhoa`, `HocKy`, `SoSVToiTieu`, `SoSVToiDa`, `NgayBatDau`, `NgayKetThuc`) VALUES
+(1, '1', 'CSE486', 2019, 1, 10, 70, '2019-01-10', '2019-02-17'),
+(2, '2', 'PHYS121', 2019, 1, 20, 70, '2019-01-10', '2019-02-15'),
+(3, '1', 'CSE381', 2019, 2, 25, 50, '2019-03-10', '2019-03-16'),
+(4, '4', 'ENGL112', 2019, 2, 30, 50, '2019-03-10', '2019-04-10');
 
 -- --------------------------------------------------------
 
@@ -220,7 +303,15 @@ CREATE TABLE `monhoc` (
 --
 
 INSERT INTO `monhoc` (`ID`, `TenMH`, `SoTietLyThuyet`, `SoTietThucHanh`, `SoTinChi`) VALUES
-('1', 'Cơ sở dữ liệu', 15, 15, 2);
+('CSE280', 'Ngôn ngữ lập trình', 20, 20, 4),
+('CSE371', 'Phương pháp số', 20, 15, 3),
+('CSE381', 'Lập trình nâng cao', 20, 15, 3),
+('CSE484', 'Cơ sở dữ liệu', 20, 20, 4),
+('CSE486', 'Hệ quản trị cơ sở dữ liệu', 20, 15, 3),
+('ENGL112', 'Tiếng Anh 1', 15, 15, 2),
+('ENGL123', 'Tiếng Anh 2', 20, 15, 2),
+('ITL112', 'Pháp luật đại cương', 15, 15, 2),
+('PHYS121', 'Vật lý đại cương', 20, 15, 3);
 
 -- --------------------------------------------------------
 
@@ -245,7 +336,8 @@ CREATE TABLE `sinhvien` (
 --
 
 INSERT INTO `sinhvien` (`ID`, `HoTen`, `GioiTinh`, `DiaChi`, `NgaySinh`, `KhoaHoc`, `ChuyenNganhID`, `LopID`, `Email`) VALUES
-('1', 'Trần Thị Vui', 'Nữ', 'Ninh Bình', '1999-09-27', 2019, '1', '2', 'vuitran@gmail.com');
+('1', 'Trần Thị Vui', 'Nữ', 'Ninh Bình', '1999-09-27', 2019, '1', '2', 'vuitran@gmail.com'),
+('3', 'Nguyễn Hòa Phát Lộc', 'Nam', 'Hà Nội', '1998-10-04', 2019, '1', '1', 'hoaphat@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -256,9 +348,9 @@ INSERT INTO `sinhvien` (`ID`, `HoTen`, `GioiTinh`, `DiaChi`, `NgaySinh`, `KhoaHo
 CREATE TABLE `userpass` (
   `id` int(11) NOT NULL,
   `user` varchar(255) NOT NULL,
+  `FullName` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `pass` varchar(255) NOT NULL,
-  `user_level` tinyint(1) DEFAULT 0,
-  `email` varchar(60) DEFAULT NULL,
+  `email` varchar(60) NOT NULL,
   `registration_date` datetime DEFAULT NULL,
   `user_type` varchar(100) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -267,14 +359,13 @@ CREATE TABLE `userpass` (
 -- Đang đổ dữ liệu cho bảng `userpass`
 --
 
-INSERT INTO `userpass` (`id`, `user`, `pass`, `user_level`, `email`, `registration_date`, `user_type`) VALUES
-(1, 'jully', 'Vuivivu279763', NULL, NULL, NULL, ''),
-(2, 'vui', 'vui', NULL, NULL, NULL, ''),
-(3, 'jullyvui', '$2y$10$KfbmpZ/e4uSJmCl8q7Q1LOiZYQ6k8r7c5PolM.6yExF...', 1, NULL, NULL, ''),
-(4, 'hi', 'hi', 0, NULL, NULL, ''),
-(5, '', '$2y$10$KfbmpZ/e4uSJmCl8q7Q1LOiZYQ6k8r7c5PolM.6yExFEq26nhllOC', 0, NULL, NULL, 'User'),
-(6, 'vui', '123456', 1, 'vuitran@gmail.com', NULL, 'Admin'),
-(7, 'Jun', '123', 0, 'jun@gmail.com', NULL, 'Admin');
+INSERT INTO `userpass` (`id`, `user`, `FullName`, `pass`, `email`, `registration_date`, `user_type`) VALUES
+(1, 'jully', 'Jully Alex', 'Vuivivu279763', 'jull@gmail.com', NULL, 'GV'),
+(3, 'jullyvui', 'Nguyễn Quang Bình', '$2y$10$KfbmpZ/e4uSJmCl8q7Q1LOiZYQ6k8r7c5PolM.6yExF...', 'jullyv@gmail.com', NULL, 'Students'),
+(4, 'hi', 'Trần Chí Công', 'hi', 'hi@gmail.com', NULL, 'QuanLy'),
+(5, 'student', 'Trung Nhân', '$2y$10$KfbmpZ/e4uSJmCl8q7Q1LOiZYQ6k8r7c5PolM.6yExFEq26nhllOC', 'st@gmail.com', NULL, 'Students'),
+(6, 'vui', 'Trần Vui', '123456', 'vuitran@gmail.com', NULL, 'Admin'),
+(7, 'Jun', 'Jun Phạm', '123', 'jun@gmail.com', NULL, 'Admin');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -285,7 +376,7 @@ INSERT INTO `userpass` (`id`, `user`, `pass`, `user_level`, `email`, `registrati
 --
 ALTER TABLE `chuyennganh`
   ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `Ten` (`Ten`),
+  ADD UNIQUE KEY `Ten` (`TenCN`),
   ADD KEY `FK_ChuyenNganh_Khoa` (`KhoaID`);
 
 --
@@ -336,15 +427,22 @@ ALTER TABLE `khoa`
 --
 ALTER TABLE `loaidiem`
   ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `Ten` (`Ten`);
+  ADD KEY `Ten` (`Ten`) USING BTREE;
 
 --
 -- Chỉ mục cho bảng `lop`
 --
 ALTER TABLE `lop`
   ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Ten` (`TenLop`);
+
+--
+-- Chỉ mục cho bảng `lop1`
+--
+ALTER TABLE `lop1`
+  ADD PRIMARY KEY (`ID`),
   ADD UNIQUE KEY `Ten` (`TenLop`),
-  ADD KEY `FK_Lop_Khoa` (`KhoaID`);
+  ADD KEY `FK_Lop_ChuyenNganh` (`ChuyenNganhID`);
 
 --
 -- Chỉ mục cho bảng `loptinchi`
@@ -365,8 +463,8 @@ ALTER TABLE `monhoc`
 --
 ALTER TABLE `sinhvien`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `FK_SinhVien_Lop` (`LopID`),
-  ADD KEY `FK_SinhVien_ChuyenNganh` (`ChuyenNganhID`);
+  ADD KEY `FK_SinhVien_ChuyenNganh` (`ChuyenNganhID`),
+  ADD KEY `FK_SinhVien_Lop1` (`LopID`);
 
 --
 -- Chỉ mục cho bảng `userpass`
@@ -382,7 +480,7 @@ ALTER TABLE `userpass`
 -- AUTO_INCREMENT cho bảng `loptinchi`
 --
 ALTER TABLE `loptinchi`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `userpass`
@@ -435,10 +533,10 @@ ALTER TABLE `khanangdayhoc`
   ADD CONSTRAINT `FK_KhaNang_MonHoc` FOREIGN KEY (`MonHocID`) REFERENCES `monhoc` (`ID`);
 
 --
--- Các ràng buộc cho bảng `lop`
+-- Các ràng buộc cho bảng `lop1`
 --
-ALTER TABLE `lop`
-  ADD CONSTRAINT `FK_Lop_Khoa` FOREIGN KEY (`KhoaID`) REFERENCES `khoa` (`ID`);
+ALTER TABLE `lop1`
+  ADD CONSTRAINT `FK_Lop_ChuyenNganh` FOREIGN KEY (`ChuyenNganhID`) REFERENCES `chuyennganh` (`ID`);
 
 --
 -- Các ràng buộc cho bảng `loptinchi`
@@ -451,7 +549,8 @@ ALTER TABLE `loptinchi`
 --
 ALTER TABLE `sinhvien`
   ADD CONSTRAINT `FK_SinhVien_ChuyenNganh` FOREIGN KEY (`ChuyenNganhID`) REFERENCES `chuyennganh` (`ID`),
-  ADD CONSTRAINT `FK_SinhVien_Lop` FOREIGN KEY (`LopID`) REFERENCES `lop` (`ID`);
+  ADD CONSTRAINT `FK_SinhVien_Lop` FOREIGN KEY (`LopID`) REFERENCES `lop` (`ID`),
+  ADD CONSTRAINT `FK_SinhVien_Lop1` FOREIGN KEY (`LopID`) REFERENCES `lop1` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
